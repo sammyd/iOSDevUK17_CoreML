@@ -29,7 +29,7 @@ class SubitizerResultViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    subitizerResults = [1, 1, 1, 1, 1]
+    subitizerResults = [0, 0, 0, 0, 0]
   }
   
   var subitizerResults: [Double]? {
