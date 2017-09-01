@@ -32,9 +32,13 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     model = try? VNCoreMLModel(for: SOS().model)
-    
   }
 
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return UIStatusBarStyle.lightContent
+  }
+  
+  @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var chooseButton: UIButton!
   @IBAction func handleChooseButtonTapped(_ sender: Any) {
     guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
@@ -43,15 +47,16 @@ class ViewController: UIViewController {
     picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
     present(picker, animated: true, completion: .none)
   }
-  
-
 }
 
 
 extension ViewController: UIImagePickerControllerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
-    process(image: image)
+    DispatchQueue.main.async {
+      self.process(image: image)
+      self.dismiss(animated: true)
+    }
   }
 }
 
@@ -61,8 +66,13 @@ extension ViewController: UINavigationControllerDelegate {
 
 extension ViewController {
   func process(image: UIImage) {
+    DispatchQueue.main.async {
+      self.imageView.image = image
+      self.updateChildVCsWithSubitizerResult([0, 0, 0, 0, 0])
+    }
+    
     guard let model = model else { return }
-    let request = VNCoreMLRequest(model: model) { (request, error) in
+    let request = VNCoreMLRequest(model: model) { [weak self] (request, error) in
       guard let results = request.results as? [VNCoreMLFeatureValueObservation],
         let mostLikelyResult = results.first else {
         print("Unknown results")
@@ -70,12 +80,14 @@ extension ViewController {
       }
       
       if let array = mostLikelyResult.featureValue.multiArrayValue {
-        let m = MultiArray<Double>(array)
-        print(m)
-        
+        let m = MultiArray<Double>(array).reshaped([5])
+        var result = [Double]()
+        for i in 0 ..< 5 {
+          result.append(m[i])
+        }
+        print(result)
+        self?.updateChildVCsWithSubitizerResult(result)
       }
-      
-      print(mostLikelyResult)
     }
     
     let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
@@ -85,6 +97,13 @@ extension ViewController {
       } catch {
         print(error)
       }
+    }
+  }
+  
+  func updateChildVCsWithSubitizerResult(_ result: [Double]) {
+    guard let resultVC = childViewControllers.filter({ $0 is SubitizerResultViewController }).first as? SubitizerResultViewController else { return }
+    DispatchQueue.main.async {
+      resultVC.subitizerResults = result
     }
   }
 }
