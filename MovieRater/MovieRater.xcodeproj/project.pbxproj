@@ -12,6 +12,7 @@
 		220727761F59F8F200EAD830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220727741F59F8F200EAD830 /* Main.storyboard */; };
 		220727781F59F8F200EAD830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220727771F59F8F200EAD830 /* Assets.xcassets */; };
 		2207277B1F59F8F200EAD830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220727791F59F8F200EAD830 /* LaunchScreen.storyboard */; };
+		220727851F59FA0300EAD830 /* MovieReviewSentiment.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 220727841F59F99600EAD830 /* MovieReviewSentiment.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		220727771F59F8F200EAD830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2207277A1F59F8F200EAD830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2207277C1F59F8F200EAD830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		220727841F59F99600EAD830 /* MovieReviewSentiment.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MovieReviewSentiment.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,63 @@
 		2207276F1F59F8F200EAD830 /* MovieRater */ = {
 			isa = PBXGroup;
 			children = (
-				220727701F59F8F200EAD830 /* AppDelegate.swift */,
-				220727721F59F8F200EAD830 /* ViewController.swift */,
-				220727741F59F8F200EAD830 /* Main.storyboard */,
-				220727771F59F8F200EAD830 /* Assets.xcassets */,
-				220727791F59F8F200EAD830 /* LaunchScreen.storyboard */,
-				2207277C1F59F8F200EAD830 /* Info.plist */,
+				2207278B1F59FA4D00EAD830 /* Assets */,
+				2207278A1F59FA4500EAD830 /* Guff */,
+				220727891F59FA3B00EAD830 /* Storyboard */,
+				220727881F59FA3400EAD830 /* Views */,
+				220727871F59FA2C00EAD830 /* Controllers */,
+				220727861F59FA2500EAD830 /* Core ML */,
 			);
 			path = MovieRater;
+			sourceTree = "<group>";
+		};
+		220727861F59FA2500EAD830 /* Core ML */ = {
+			isa = PBXGroup;
+			children = (
+				220727841F59F99600EAD830 /* MovieReviewSentiment.mlmodel */,
+			);
+			path = "Core ML";
+			sourceTree = "<group>";
+		};
+		220727871F59FA2C00EAD830 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				220727721F59F8F200EAD830 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		220727881F59FA3400EAD830 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		220727891F59FA3B00EAD830 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				220727741F59F8F200EAD830 /* Main.storyboard */,
+				220727791F59F8F200EAD830 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		2207278A1F59FA4500EAD830 /* Guff */ = {
+			isa = PBXGroup;
+			children = (
+				220727701F59F8F200EAD830 /* AppDelegate.swift */,
+				2207277C1F59F8F200EAD830 /* Info.plist */,
+			);
+			path = Guff;
+			sourceTree = "<group>";
+		};
+		2207278B1F59FA4D00EAD830 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				220727771F59F8F200EAD830 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				220727731F59F8F200EAD830 /* ViewController.swift in Sources */,
+				220727851F59FA0300EAD830 /* MovieReviewSentiment.mlmodel in Sources */,
 				220727711F59F8F200EAD830 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D23W9URMHY;
-				INFOPLIST_FILE = MovieRater/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieRater/Guff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.MovieRater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D23W9URMHY;
-				INFOPLIST_FILE = MovieRater/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieRater/Guff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.MovieRater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
