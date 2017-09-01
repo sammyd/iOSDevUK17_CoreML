@@ -12,6 +12,8 @@
 		229D19601F58B38000AF5400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229D195E1F58B38000AF5400 /* Main.storyboard */; };
 		229D19621F58B38000AF5400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229D19611F58B38000AF5400 /* Assets.xcassets */; };
 		229D19651F58B38000AF5400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229D19631F58B38000AF5400 /* LaunchScreen.storyboard */; };
+		229D196D1F58B9B100AF5400 /* SOS.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 229D196C1F58B9A100AF5400 /* SOS.mlmodel */; };
+		229D196F1F58BF5300AF5400 /* MultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D196E1F58BF5300AF5400 /* MultiArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		229D19611F58B38000AF5400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229D19641F58B38000AF5400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229D19661F58B38000AF5400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		229D196C1F58B9A100AF5400 /* SOS.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SOS.mlmodel; path = ../../model_prep/subutizing/SOS.mlmodel; sourceTree = "<group>"; };
+		229D196E1F58BF5300AF5400 /* MultiArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,14 @@
 		229D19591F58B38000AF5400 /* Subitizer */ = {
 			isa = PBXGroup;
 			children = (
+				229D196C1F58B9A100AF5400 /* SOS.mlmodel */,
 				229D195A1F58B38000AF5400 /* AppDelegate.swift */,
 				229D195C1F58B38000AF5400 /* ViewController.swift */,
 				229D195E1F58B38000AF5400 /* Main.storyboard */,
 				229D19611F58B38000AF5400 /* Assets.xcassets */,
 				229D19631F58B38000AF5400 /* LaunchScreen.storyboard */,
 				229D19661F58B38000AF5400 /* Info.plist */,
+				229D196E1F58BF5300AF5400 /* MultiArray.swift */,
 			);
 			path = Subitizer;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				229D195D1F58B38000AF5400 /* ViewController.swift in Sources */,
+				229D196F1F58BF5300AF5400 /* MultiArray.swift in Sources */,
+				229D196D1F58B9B100AF5400 /* SOS.mlmodel in Sources */,
 				229D195B1F58B38000AF5400 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
