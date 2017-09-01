@@ -14,6 +14,7 @@
 		229D19651F58B38000AF5400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229D19631F58B38000AF5400 /* LaunchScreen.storyboard */; };
 		229D196D1F58B9B100AF5400 /* SOS.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 229D196C1F58B9A100AF5400 /* SOS.mlmodel */; };
 		229D196F1F58BF5300AF5400 /* MultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D196E1F58BF5300AF5400 /* MultiArray.swift */; };
+		229D19791F59431700AF5400 /* SubitizerResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D19781F59431700AF5400 /* SubitizerResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		229D19611F58B38000AF5400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229D19641F58B38000AF5400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229D19661F58B38000AF5400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		229D196C1F58B9A100AF5400 /* SOS.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SOS.mlmodel; path = ../../model_prep/subutizing/SOS.mlmodel; sourceTree = "<group>"; };
+		229D196C1F58B9A100AF5400 /* SOS.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SOS.mlmodel; sourceTree = "<group>"; };
 		229D196E1F58BF5300AF5400 /* MultiArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiArray.swift; sourceTree = "<group>"; };
+		229D19781F59431700AF5400 /* SubitizerResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubitizerResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,73 @@
 		229D19591F58B38000AF5400 /* Subitizer */ = {
 			isa = PBXGroup;
 			children = (
-				229D196C1F58B9A100AF5400 /* SOS.mlmodel */,
-				229D195A1F58B38000AF5400 /* AppDelegate.swift */,
-				229D195C1F58B38000AF5400 /* ViewController.swift */,
-				229D195E1F58B38000AF5400 /* Main.storyboard */,
-				229D19611F58B38000AF5400 /* Assets.xcassets */,
-				229D19631F58B38000AF5400 /* LaunchScreen.storyboard */,
-				229D19661F58B38000AF5400 /* Info.plist */,
-				229D196E1F58BF5300AF5400 /* MultiArray.swift */,
+				229D19741F59428400AF5400 /* Assets */,
+				229D19721F59427000AF5400 /* Controllers */,
+				229D19771F5942AA00AF5400 /* Guff */,
+				229D19761F59429C00AF5400 /* ML */,
+				22F212061F5945D500B90735 /* Storyboards */,
+				229D19751F59429100AF5400 /* Utils */,
+				229D19731F59427800AF5400 /* Views */,
 			);
 			path = Subitizer;
+			sourceTree = "<group>";
+		};
+		229D19721F59427000AF5400 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				229D195C1F58B38000AF5400 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		229D19731F59427800AF5400 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				229D19781F59431700AF5400 /* SubitizerResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		229D19741F59428400AF5400 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				229D19611F58B38000AF5400 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		229D19751F59429100AF5400 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				229D196E1F58BF5300AF5400 /* MultiArray.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		229D19761F59429C00AF5400 /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				229D196C1F58B9A100AF5400 /* SOS.mlmodel */,
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
+		229D19771F5942AA00AF5400 /* Guff */ = {
+			isa = PBXGroup;
+			children = (
+				229D19661F58B38000AF5400 /* Info.plist */,
+				229D195A1F58B38000AF5400 /* AppDelegate.swift */,
+			);
+			path = Guff;
+			sourceTree = "<group>";
+		};
+		22F212061F5945D500B90735 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				229D195E1F58B38000AF5400 /* Main.storyboard */,
+				229D19631F58B38000AF5400 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				229D195D1F58B38000AF5400 /* ViewController.swift in Sources */,
+				229D19791F59431700AF5400 /* SubitizerResultView.swift in Sources */,
 				229D196F1F58BF5300AF5400 /* MultiArray.swift in Sources */,
 				229D196D1F58B9B100AF5400 /* SOS.mlmodel in Sources */,
 				229D195B1F58B38000AF5400 /* AppDelegate.swift in Sources */,
@@ -284,7 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D23W9URMHY;
-				INFOPLIST_FILE = Subitizer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Subitizer/Guff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Subitizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D23W9URMHY;
-				INFOPLIST_FILE = Subitizer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Subitizer/Guff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Subitizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
