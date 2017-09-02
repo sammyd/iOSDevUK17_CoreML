@@ -57,7 +57,15 @@ class MovieReviewTableViewCell: UITableViewCell {
   
   private func updateCellAppearance(for sentiment: SentimentAnalyser.SentimentPrediction) {
     DispatchQueue.main.async {
-      self.sentimentLabel.text = sentiment.sentiment == .postive ? "👍" : "👎"
+      switch sentiment.sentiment {
+      case .postive:
+        self.sentimentLabel.text = "👍"
+      case .negative:
+        self.sentimentLabel.text = "👎"
+      case .error:
+        self.sentimentLabel.text = "😤"
+      }
+      
       self.sentimentBarWidthConstraint?.isActive = false
       self.sentimentBarWidthConstraint = self.postitiveSentimentBar.widthAnchor.constraint(equalTo: self.sentimentBarStackView.widthAnchor, multiplier: CGFloat(sentiment.positive))
       self.sentimentBarWidthConstraint?.isActive = true

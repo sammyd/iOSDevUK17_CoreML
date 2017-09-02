@@ -68,8 +68,11 @@ class MovieReviewTableViewController: UITableViewController {
   private func calculateSentiments() {
     for section in sections {
       for review in reviews[section]! {
-        let sentiment = sentimentAnalyser.predictSentiment(for: review.review)
-        sentimentPredictions[review] = sentiment
+        sentimentAnalyser.predictSentiment(for: review.review) { sentiment in
+          DispatchQueue.main.async {
+            self.sentimentPredictions[review] = sentiment
+          }
+        }
       }
     }
   }

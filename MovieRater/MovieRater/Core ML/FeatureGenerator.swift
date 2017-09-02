@@ -57,6 +57,10 @@ class FeatureGenerator {
     let featureValues = tfidf(from: featureCount)
     let featureVector = try! MLMultiArray(shape: [1, NSNumber(value: sentimentFeatures.count)], dataType: .double)
     
+    for i in 0 ..< featureVector.count {
+      featureVector[i] = 0
+    }
+    
     for (feature, tfidf) in featureValues {
       featureVector[feature.index] = NSNumber(value: tfidf)
     }

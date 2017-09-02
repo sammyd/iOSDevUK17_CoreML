@@ -26,36 +26,49 @@ class SentimentAnalyser {
   enum Sentiment {
     case postive
     case negative
+    case error
   }
   
   struct SentimentPrediction {
     let positive: Double
     let negative: Double
     var sentiment: Sentiment {
-      // It won't let me make this ternary
-      if positive > negative {
-        return .postive
-      } else {
-        return .negative
+      if positive == 0 && negative == 0 {
+        return .error
       }
+      return positive > negative ? .postive : .negative
     }
   }
   
   private let featureGenerator = FeatureGenerator()
   private let model = MovieReviewSentiment()
+  private let queryQueue = DispatchQueue(label: "com.razeware.MovieRater.sentiment", qos: .userInitiated)
   
-  func predictSentiment(for text: String) -> SentimentPrediction {
-    let featureVector = featureGenerator.featureVector(for: text)
-    
-    do {
-      let prediction = try model.prediction(input: featureVector)
-      print(prediction.classProbability)
-      
-      return SentimentPrediction(positive: prediction.classProbability["pos"]!,
-                                 negative: prediction.classProbability["neg"]!)
-    } catch let e {
-      print(e)
-      fatalError("Unable to predict sentiment")
+  init() {
+    queryQueue.async {
+      // Cos this feels right
+      sleep(5)
+    }
+  }
+  
+  func predictSentiment(for text: String, callback: @escaping (SentimentPrediction) -> ()) {
+    queryQueue.async {
+      do {
+        let featureVector = self.featureGenerator.featureVector(for: text)
+        let prediction = try self.model.prediction(input: featureVector)
+        print(prediction.classProbability)
+        
+        DispatchQueue.main.async {
+          callback(SentimentPrediction(positive: prediction.classProbability["pos"]!,
+                                       negative: prediction.classProbability["neg"]!))
+        }
+      } catch let e {
+        print(e)
+        DispatchQueue.main.async {
+          callback(SentimentPrediction(positive: 0,
+                                       negative: 0))
+        }
+      }
     }
   }
 }
