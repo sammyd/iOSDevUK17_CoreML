@@ -24,15 +24,19 @@ import UIKit
 
 class MovieReviewTableViewController: UITableViewController {
   
+  let sentimentAnalyser = SentimentAnalyser()
   let reviews = MovieReview.loadReviews()
   lazy var sections: [String] = {
     reviews.map({ (key, _) in
       return key
     })
   }()
+  var sentimentPredictions = [MovieReview : SentimentAnalyser.SentimentPrediction]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    calculateSentiments()
   }
   
   // MARK: - Table view data source
@@ -51,11 +55,22 @@ class MovieReviewTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath)
    
-    if let movieReviews = reviews[sections[indexPath.section]] {
+    if let movieReviews = reviews[sections[indexPath.section]],
+      let cell = cell as? MovieReviewTableViewCell {
       let review = movieReviews[indexPath.item]
-      cell.textLabel?.text = review.review
+      cell.sentimentPrediction = sentimentPredictions[review]
+      cell.movieReview = review
     }
     
     return cell
+  }
+  
+  private func calculateSentiments() {
+    for section in sections {
+      for review in reviews[section]! {
+        let sentiment = sentimentAnalyser.predictSentiment(for: review.review)
+        sentimentPredictions[review] = sentiment
+      }
+    }
   }
 }

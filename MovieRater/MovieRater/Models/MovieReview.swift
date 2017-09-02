@@ -28,6 +28,16 @@ struct MovieReview: Codable {
   let rating: Int
 }
 
+extension MovieReview: Hashable {
+  var hashValue: Int {
+    return review.hashValue
+  }
+  
+  static func ==(lhs: MovieReview, rhs: MovieReview) -> Bool {
+    return lhs.review == rhs.review
+  }
+}
+
 extension MovieReview {
   static func loadReviews() -> [String : [MovieReview]] {
     guard let url = Bundle.main.url(forResource: "reviews", withExtension: "json"),

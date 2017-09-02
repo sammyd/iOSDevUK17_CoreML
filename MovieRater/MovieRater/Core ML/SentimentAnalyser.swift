@@ -47,10 +47,15 @@ class SentimentAnalyser {
   func predictSentiment(for text: String) -> SentimentPrediction {
     let featureVector = featureGenerator.featureVector(for: text)
     
-    let prediction = try! model.prediction(input: featureVector)
-    print(prediction.classProbability)
-    
-    return SentimentPrediction(positive: prediction.classProbability["pos"]!,
-                               negative: prediction.classProbability["neg"]!)
+    do {
+      let prediction = try model.prediction(input: featureVector)
+      print(prediction.classProbability)
+      
+      return SentimentPrediction(positive: prediction.classProbability["pos"]!,
+                                 negative: prediction.classProbability["neg"]!)
+    } catch let e {
+      print(e)
+      fatalError("Unable to predict sentiment")
+    }
   }
 }

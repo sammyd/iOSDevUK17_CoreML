@@ -19,6 +19,7 @@
 		229352FB1F5AB13800276EBB /* reviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 229352FA1F5AB13800276EBB /* reviews.json */; };
 		229352FD1F5AB4A800276EBB /* MovieReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229352FC1F5AB4A800276EBB /* MovieReview.swift */; };
 		229352FF1F5AB58900276EBB /* MovieReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229352FE1F5AB58900276EBB /* MovieReviewTableViewController.swift */; };
+		229353011F5AC22700276EBB /* MovieReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229353001F5AC22700276EBB /* MovieReviewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		229352FA1F5AB13800276EBB /* reviews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reviews.json; sourceTree = "<group>"; };
 		229352FC1F5AB4A800276EBB /* MovieReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReview.swift; sourceTree = "<group>"; };
 		229352FE1F5AB58900276EBB /* MovieReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewTableViewController.swift; sourceTree = "<group>"; };
+		229353001F5AC22700276EBB /* MovieReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		220727881F59FA3400EAD830 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				229353001F5AC22700276EBB /* MovieReviewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				220727851F59FA0300EAD830 /* MovieReviewSentiment.mlmodel in Sources */,
 				220727711F59F8F200EAD830 /* AppDelegate.swift in Sources */,
 				220727931F5AA65600EAD830 /* SentimentAnalyser.swift in Sources */,
+				229353011F5AC22700276EBB /* MovieReviewTableViewCell.swift in Sources */,
 				220727901F5A987E00EAD830 /* FeatureGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
