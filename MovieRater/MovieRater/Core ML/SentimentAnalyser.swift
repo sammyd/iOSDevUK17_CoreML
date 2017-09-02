@@ -44,13 +44,6 @@ class SentimentAnalyser {
   private let model = MovieReviewSentiment()
   private let queryQueue = DispatchQueue(label: "com.razeware.MovieRater.sentiment", qos: .userInitiated)
   
-  init() {
-    queryQueue.async {
-      // Cos this feels right
-      sleep(5)
-    }
-  }
-  
   func predictSentiment(for text: String, callback: @escaping (SentimentPrediction) -> ()) {
     queryQueue.async {
       do {

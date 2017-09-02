@@ -60,10 +60,13 @@ class MovieReviewTableViewCell: UITableViewCell {
       switch sentiment.sentiment {
       case .postive:
         self.sentimentLabel.text = "👍"
+        self.sentimentLabel.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
       case .negative:
         self.sentimentLabel.text = "👎"
+        self.sentimentLabel.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
       case .error:
         self.sentimentLabel.text = "😤"
+        self.sentimentLabel.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
       }
       
       self.sentimentBarWidthConstraint?.isActive = false
