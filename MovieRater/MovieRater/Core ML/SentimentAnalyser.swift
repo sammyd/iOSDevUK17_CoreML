@@ -42,26 +42,18 @@ class SentimentAnalyser {
   
   private let featureGenerator = FeatureGenerator()
   private let model = MovieReviewSentiment()
-  private let queryQueue = DispatchQueue(label: "com.razeware.MovieRater.sentiment", qos: .userInitiated)
   
-  func predictSentiment(for text: String, callback: @escaping (SentimentPrediction) -> ()) {
-    queryQueue.async {
-      do {
-        let featureVector = self.featureGenerator.featureVector(for: text)
-        let prediction = try self.model.prediction(input: featureVector)
-        print(prediction.classProbability)
-        
-        DispatchQueue.main.async {
-          callback(SentimentPrediction(positive: prediction.classProbability["pos"]!,
-                                       negative: prediction.classProbability["neg"]!))
-        }
-      } catch let e {
-        print(e)
-        DispatchQueue.main.async {
-          callback(SentimentPrediction(positive: 0,
-                                       negative: 0))
-        }
-      }
+  func predictSentiment(for text: String) -> SentimentPrediction {
+    do {
+      let featureVector = self.featureGenerator.featureVector(for: text)
+      let prediction = try self.model.prediction(input: featureVector)
+      print(prediction.classProbability)
+      
+      return SentimentPrediction(positive: prediction.classProbability["pos"]!,
+                                 negative: prediction.classProbability["neg"]!)
+    } catch let e {
+      print(e)
+      return SentimentPrediction(positive: 0, negative: 0)
     }
   }
 }
