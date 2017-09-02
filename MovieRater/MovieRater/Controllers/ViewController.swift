@@ -13,6 +13,9 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    let analyser = SentimentAnalyser()
+    let prediction = analyser.predictSentiment(for: "highly very best best awesome recommended")
+    print(prediction)
   }
 
   override func didReceiveMemoryWarning() {

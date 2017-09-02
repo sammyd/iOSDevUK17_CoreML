@@ -13,6 +13,10 @@
 		220727781F59F8F200EAD830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220727771F59F8F200EAD830 /* Assets.xcassets */; };
 		2207277B1F59F8F200EAD830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220727791F59F8F200EAD830 /* LaunchScreen.storyboard */; };
 		220727851F59FA0300EAD830 /* MovieReviewSentiment.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 220727841F59F99600EAD830 /* MovieReviewSentiment.mlmodel */; };
+		2207278E1F5A982400EAD830 /* SentimentFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207278D1F5A982400EAD830 /* SentimentFeature.swift */; };
+		220727901F5A987E00EAD830 /* FeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207278F1F5A987E00EAD830 /* FeatureGenerator.swift */; };
+		220727931F5AA65600EAD830 /* SentimentAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220727921F5AA65600EAD830 /* SentimentAnalyser.swift */; };
+		220727941F5AA7D200EAD830 /* features.json in Resources */ = {isa = PBXBuildFile; fileRef = 220727911F5A98D900EAD830 /* features.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		2207277A1F59F8F200EAD830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2207277C1F59F8F200EAD830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220727841F59F99600EAD830 /* MovieReviewSentiment.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MovieReviewSentiment.mlmodel; sourceTree = "<group>"; };
+		2207278D1F5A982400EAD830 /* SentimentFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentFeature.swift; sourceTree = "<group>"; };
+		2207278F1F5A987E00EAD830 /* FeatureGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureGenerator.swift; sourceTree = "<group>"; };
+		220727911F5A98D900EAD830 /* features.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = features.json; path = ../../../model_prep/SentimentAnalysis/features.json; sourceTree = "<group>"; };
+		220727921F5AA65600EAD830 /* SentimentAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentAnalyser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		2207276F1F59F8F200EAD830 /* MovieRater */ = {
 			isa = PBXGroup;
 			children = (
+				2207278C1F5A980D00EAD830 /* Models */,
 				2207278B1F59FA4D00EAD830 /* Assets */,
 				2207278A1F59FA4500EAD830 /* Guff */,
 				220727891F59FA3B00EAD830 /* Storyboard */,
@@ -70,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				220727841F59F99600EAD830 /* MovieReviewSentiment.mlmodel */,
+				2207278F1F5A987E00EAD830 /* FeatureGenerator.swift */,
+				220727921F5AA65600EAD830 /* SentimentAnalyser.swift */,
 			);
 			path = "Core ML";
 			sourceTree = "<group>";
@@ -110,9 +121,18 @@
 		2207278B1F59FA4D00EAD830 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				220727911F5A98D900EAD830 /* features.json */,
 				220727771F59F8F200EAD830 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		2207278C1F5A980D00EAD830 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2207278D1F5A982400EAD830 /* SentimentFeature.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220727941F5AA7D200EAD830 /* features.json in Resources */,
 				2207277B1F59F8F200EAD830 /* LaunchScreen.storyboard in Resources */,
 				220727781F59F8F200EAD830 /* Assets.xcassets in Resources */,
 				220727761F59F8F200EAD830 /* Main.storyboard in Resources */,
@@ -187,9 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2207278E1F5A982400EAD830 /* SentimentFeature.swift in Sources */,
 				220727731F59F8F200EAD830 /* ViewController.swift in Sources */,
 				220727851F59FA0300EAD830 /* MovieReviewSentiment.mlmodel in Sources */,
 				220727711F59F8F200EAD830 /* AppDelegate.swift in Sources */,
+				220727931F5AA65600EAD830 /* SentimentAnalyser.swift in Sources */,
+				220727901F5A987E00EAD830 /* FeatureGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
