@@ -9,17 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Movie Reviews-->
         <scene sceneID="Iej-Ef-1hG">
             <objects>
-                <tableViewController id="LNa-zJ-4gF" customClass="MovieReviewTableViewController" customModule="MovieRater" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CTm-bS-07V">
+                <tableViewController title="Movie Reviews" id="LNa-zJ-4gF" customClass="MovieReviewTableViewController" customModule="MovieRater" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="42" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" id="CTm-bS-07V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="203" id="2av-u7-6Vg" customClass="MovieReviewTableViewCell" customModule="MovieRater" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="203"/>
+                                <rect key="frame" x="0.0" y="42" width="375" height="203"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2av-u7-6Vg" id="IUf-bs-BUz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="202.5"/>
@@ -47,7 +47,7 @@
                                                                         </view>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="LQ4-KX-FIM" firstAttribute="width" secondItem="dSd-fC-tfB" secondAttribute="width" id="2PG-c2-Rb5"/>
+                                                                        <constraint firstItem="LQ4-KX-FIM" firstAttribute="width" secondItem="dSd-fC-tfB" secondAttribute="width" placeholder="YES" id="2PG-c2-Rb5"/>
                                                                         <constraint firstAttribute="height" constant="5" id="NUi-FW-8c3"/>
                                                                     </constraints>
                                                                 </stackView>
@@ -98,6 +98,7 @@
                                     <outlet property="postitiveSentimentBar" destination="dSd-fC-tfB" id="L1d-X7-j8a"/>
                                     <outlet property="ratingLabel" destination="P9M-Da-GwN" id="Yb1-dx-Vjb"/>
                                     <outlet property="reviewLabel" destination="OlM-Te-May" id="cMK-7p-heA"/>
+                                    <outlet property="sentimentBarStackView" destination="u2i-WB-hBO" id="lYe-DT-d1S"/>
                                     <outlet property="sentimentLabel" destination="3YX-0N-Rkf" id="i0b-wZ-uQi"/>
                                 </connections>
                             </tableViewCell>
@@ -107,7 +108,7 @@
                             <outlet property="delegate" destination="LNa-zJ-4gF" id="NpZ-cH-uhJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="zgl-vB-b77"/>
+                    <navigationItem key="navigationItem" title="Movie Reviews" id="zgl-vB-b77"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TA6-lN-tss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,8 +118,8 @@
         <scene sceneID="8NH-sC-KVa">
             <objects>
                 <navigationController id="6Qi-rX-Zz3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kDt-u8-b5j">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kDt-u8-b5j">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

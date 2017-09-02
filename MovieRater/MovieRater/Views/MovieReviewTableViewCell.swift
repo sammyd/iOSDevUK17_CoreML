@@ -28,6 +28,8 @@ class MovieReviewTableViewCell: UITableViewCell {
   @IBOutlet weak var sentimentLabel: UILabel!
   @IBOutlet weak var negativeSentimentBar: UIView!
   @IBOutlet weak var postitiveSentimentBar: UIView!
+  @IBOutlet weak var sentimentBarStackView: UIStackView!
+  private var sentimentBarWidthConstraint: NSLayoutConstraint?
   
   var movieReview: MovieReview? {
     didSet {
@@ -54,13 +56,11 @@ class MovieReviewTableViewCell: UITableViewCell {
   }
   
   private func updateCellAppearance(for sentiment: SentimentAnalyser.SentimentPrediction) {
-    let ratio = sentiment.positive / (sentiment.negative + sentiment.positive)
     DispatchQueue.main.async {
       self.sentimentLabel.text = sentiment.sentiment == .postive ? "👍" : "👎"
-      let oldConstraint = self.postitiveSentimentBar.constraints.first(where: { $0.firstAttribute == .width })
-      oldConstraint?.isActive = false
-      let newConstraint = self.postitiveSentimentBar.widthAnchor.constraint(equalTo: self.negativeSentimentBar.widthAnchor, multiplier: CGFloat(ratio))
-      newConstraint.isActive = true
+      self.sentimentBarWidthConstraint?.isActive = false
+      self.sentimentBarWidthConstraint = self.postitiveSentimentBar.widthAnchor.constraint(equalTo: self.sentimentBarStackView.widthAnchor, multiplier: CGFloat(sentiment.positive))
+      self.sentimentBarWidthConstraint?.isActive = true
     }
   }
 }

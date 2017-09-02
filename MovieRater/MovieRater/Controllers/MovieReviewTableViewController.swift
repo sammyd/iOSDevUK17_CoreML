@@ -73,4 +73,12 @@ class MovieReviewTableViewController: UITableViewController {
       }
     }
   }
+  
+  
+  override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    guard let header = view as? UITableViewHeaderFooterView,
+      let textLabel = header.textLabel else { return }
+    
+    textLabel.font = UIFont.systemFont(ofSize: 24, weight: .heavy)
+  }
 }
