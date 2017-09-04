@@ -53,30 +53,36 @@ _picture of the machine learning function_
 ---
 
 # [fit] __3__
+# [fit] feature
+# [fit] vectors
+
+---
+
+# [fit] __4__
 # [fit] train
 # [fit] model
 
 ---
 
-# [fit] __4__
+# [fit] __5__
 # [fit] test
 # [fit] model
 
 ---
 
-# [fit] __5__
+# [fit] __6__
 # [fit] repeat
-# [fit] __3__ & __4__
+# [fit] __3__, __4__ & __5__
 
 ---
 
-# [fit] __6__
+# [fit] __7__
 # [fit] deploy
 # [fit] model
 
 ---
 
-# [fit] __7__
+# [fit] __8__
 # [fit] perform
 # [fit] prediction
 
@@ -86,11 +92,12 @@ _picture of the machine learning function_
 
 1. Collect data
 2. Ground truth
-3. Train model
-4. Test model
-5. Repeat 3 & 4
-6. Deploy model
-7. Perform prediction
+3. Feature vectors
+4. Train model
+5. Test model
+6. Repeat 3, 4 & 5
+7. Deploy model
+8. Perform prediction
 
 ---
 
@@ -98,11 +105,12 @@ _picture of the machine learning function_
 
 1. _Collect data_
 2. _Ground truth_
-3. _Train model_
-4. _Test model_
-5. _Repeat 3 & 4_
-6. __Deploy model__
-7. __Perform prediction__
+3. _Feature vectors_
+4. _Train model_
+5. _Test model_
+6. _Repeat 3, 4 & 5_
+7. __Deploy model__
+8. __Perform prediction__
 
 ---
 
