@@ -18,7 +18,7 @@
 
 ---
 
-_picture of the machine learning function_
+![](images/ml_function.png)
 
 ---
 
@@ -157,7 +157,11 @@ _picture of the machine learning function_
 
 ---
 
-do some drawing
+# ![autoplay](images/svm_2d.m4v)
+
+---
+
+# ![](images/svm_3d.m4v)
 
 ---
 
@@ -183,7 +187,55 @@ do some drawing
 
 ---
 
-do some drawing
+# ![100%](images/conv_01.png)
+
+---
+
+# ![100%](images/conv_02.png)
+
+---
+
+# ![100%](images/conv_03.png)
+
+---
+
+# ![100%](images/conv_04.png)
+
+---
+
+# ![100%](images/conv_05.png)
+
+---
+
+# ![100%](images/conv_06.png)
+
+---
+
+# ![100%](images/conv_07.png)
+
+---
+
+# ![100%](images/conv_08.png)
+
+---
+
+# ![80%](images/fcl_01.png)
+
+---
+
+# ![80%](images/fcl_02.png)
+
+---
+
+# ![80%](images/fcl_03.png)
+
+---
+
+# ![80%](images/fcl_04.png)
+
+---
+
+# ![100%](images/cnn_overview.png)
 
 ---
 
